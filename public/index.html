@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoCare | Vehicle Service Management</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">A</span><span>AutoCare<small>VEHICLE SERVICE MANAGEMENT</small></span></a>
+    <div class="top-actions"><span id="user-chip" class="user-chip hidden"></span><button id="logout-btn" class="btn btn-outline hidden">Log out</button></div>
+  </header>
+  <main class="container">
+    <section id="auth-view" class="auth-layout">
+      <div class="hero-panel">
+        <p class="eyebrow">SMARTER VEHICLE CARE</p>
+        <h1>Service your vehicle.<br><span>Without the guesswork.</span></h1>
+        <p class="hero-copy">Book maintenance, follow repair progress, approve estimates and keep every service record in one place.</p>
+        <div class="hero-points"><span>✓ Clear service status</span><span>✓ Organized vehicle history</span><span>✓ Transparent estimates</span></div>
+      </div>
+      <div class="auth-card">
+        <div class="tabs">
+          <button class="tab active" data-auth-tab="login">Customer / Staff sign in</button>
+          <button class="tab" data-auth-tab="admin">Admin sign in</button>
+          <button class="tab" data-auth-tab="register">Create account</button>
+        </div>
+        <form id="login-form" class="form-stack">
+          <h2 id="login-title">Welcome back</h2><p class="muted" id="login-description">Sign in to your AutoCare account.</p>
+          <label>Email<input name="email" type="email" required autocomplete="email" placeholder="you@example.com"></label>
+          <label>Password<input name="password" type="password" required autocomplete="current-password" placeholder="Enter password"></label>
+          <button class="btn btn-primary full" type="submit">Sign in</button>
+        </form>
+        <form id="register-form" class="form-stack hidden">
+          <h2>Create your account</h2><p class="muted">Start by adding your vehicle after registration.</p>
+          <label>Full name<input name="name" required maxlength="100" placeholder="Your name"></label>
+          <label>Email<input name="email" type="email" required placeholder="you@example.com"></label>
+          <label>Phone <span class="optional">(optional)</span><input name="phone" type="tel" placeholder="Phone number"></label>
+          <label>Password<input name="password" type="password" required minlength="8" placeholder="At least 8 characters"></label>
+          <button class="btn btn-primary full" type="submit">Create account</button>
+        </form>
+        <p class="tiny muted"></p>
+      </div>
+    </section>
+
+    <section id="app-view" class="hidden">
+      <div class="welcome-row"><div><p class="eyebrow">YOUR WORKSPACE</p><h1 id="welcome-title">Dashboard</h1><p class="muted" id="welcome-subtitle">Manage your vehicle service in one place.</p></div><button class="btn btn-primary" id="refresh-btn">Refresh data ↻</button></div>
+      <div id="stats" class="stats-grid"></div>
+      <nav id="main-nav" class="main-nav"></nav>
+      <div id="notice" class="notice hidden" role="status"></div>
+      <div id="content" class="content-grid"></div>
+    </section>
+  </main>
+  <footer>AutoCare · Keep your vehicle moving.</footer>
+  <script src="/app.js"></script>
+</body>
+</html>

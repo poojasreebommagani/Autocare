@@ -1047,10 +1047,13 @@ app.use((err, req, res, next) => {
 // Export the Express app for Vercel serverless deployment.
 // Keep app.listen for local development only.
 if (require.main === module) {
-  const port = Number(process.env.PORT || 5000);
-  app.listen(port, () =>
-    console.log(`AutoCare running at http://localhost:${port}`)
-  );
+  const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`AutoCare running on port ${PORT}`);
+});
+  
+
 }
 
 module.exports = app;
